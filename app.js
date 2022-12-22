@@ -17,3 +17,13 @@ function getJsonFile() {
     .catch((err) => console.log(err));
 }
 getJsonFile();
+
+function getExternalApi() {
+  // Globaldaki bir api'den veri alma
+  // Dosyanın adresini yazıyoruz
+  fetch("http://api.exchangeratesapi.io/latest")
+    .then((response) => response.json())
+    .then((data) => console.log(data.error.type))
+    .catch((err) => console.log(err));
+}
+getExternalApi();
